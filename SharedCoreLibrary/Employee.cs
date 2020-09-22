@@ -6,13 +6,20 @@ namespace SharedCoreLibrary
 {
     public class Employee
     {
-        public Employee(string firstname, string lastname)
+        public Employee()
         {
-            Firstname = firstname;
-            Lastname = lastname;
         }
 
-        public string Firstname { get; }
-        public string Lastname { get; }
+        public Employee(string firstname, string lastname)
+        {
+            Id = Guid.NewGuid();
+            FirstName = firstname;
+            LastName = lastname;
+        }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string FullName => $"{FirstName} {LastName}";
+        public Guid Id { get; set; }
     }
 }

@@ -24,5 +24,22 @@ namespace SharedCoreLibrary.Tests
 
         }
 
+        [Fact]
+        public void FullName_ShouldReturnTheFullNameOfTheEmployee()
+        {
+            Employee employee = new Employee() { FirstName = "Jesper", LastName = "Müllern" };
+            Assert.Equal("Jesper Müllern", employee.FullName);
+        }
+
+        [Fact]
+        public void Id_ShouldReturnGuidId()
+        {
+            Guid _id = Guid.NewGuid();
+
+            Employee employee = new Employee() { Id = _id };
+            Assert.Equal(_id, employee.Id);
+
+        }
+
     }
 }
